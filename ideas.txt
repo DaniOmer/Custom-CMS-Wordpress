@@ -1,0 +1,49 @@
+### Quelques idées de CMS pour le challenge semestriel PHP
+
+## CMS pour les sites de tourisme
+# Ce CMS permet de gérer les offres de voyages, les destinations, les types d'hébergement,
+# les activités, les itinéraires, les témoignages clients et même les réservations en ligne, etc..
+
+
+
+
+### Besoins du projet
+1- Utilisateur - Inscription et Connexion pour le CMS
+2- Dashboard ou backOffice accueil 
+3- Utilisateur - Inscription et Connexion pour le site  conçu à partir du CMS (User pouvant interagir avec le site en mettant des commentaires)
+4- Composant voyage (Card - titre, destination, meta-description, prix, avis étoiles)
+5- Composant Description de l'offre de voyage (titre, description de l'offre, prix) - Faire évoluer si nous avons le temps
+6- Forum (commnentaire sur la destination proposée) - Penser à mettre en place la modération - avec fonctionnalité de réponse - 
+Faire évoluer l'espace commentaire si on a le temps
+7- Création de page (CRUD)
+8- Gestion du template front
+9- Optimisation SEO
+10- Bannière (Image + Texte)
+11- Composant contact (social media + adresse)
+12- Menu NavBar (pouvant servir pour tête ou bas de page - example : Home - Offre - A propos (Mentions légale, ))
+
+13 - Module de recherche - Newseletter - falcultatif si on a le temps
+
+15- Composant HTML (form, button, )
+
+Composants
+- Entête (header)
+- Texte
+- footer
+- Form
+- Newseletter
+- Appel à l'action
+- page 
+- Bannière
+- Carroussel d'Image
+
+
+
+
+Pour Mardi :
+- Repo avec git flow
+- Validation des Composants
+- WYSIWYG
+- Upload d'Image + Connexion
+- Recherche projets similaires pour ressources
+- Modélisation de la base de données
