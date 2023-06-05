@@ -8,7 +8,7 @@
 
 
 ### Besoins du projet
-1- Utilisateur - Inscription et Connexion pour le CMS
+1- Utilisateur - Inscription et Connexion pour le CMS et mot de passe oublié. 
 2- Dashboard ou backOffice accueil 
 3- Utilisateur - Inscription et Connexion pour le site  conçu à partir du CMS (User pouvant interagir avec le site en mettant des commentaires)
 4- Composant voyage (Card - titre, destination, meta-description, prix, avis étoiles)
@@ -16,8 +16,8 @@
 6- Forum (commnentaire sur la destination proposée) - Penser à mettre en place la modération - avec fonctionnalité de réponse - 
 Faire évoluer l'espace commentaire si on a le temps
 7- Création de page (CRUD)
-8- Gestion du template front
-9- Optimisation SEO
+8-  Gestion du template front
+9-  Optimisation SEO
 10- Bannière (Image + Texte)
 11- Composant contact (social media + adresse)
 12- Menu NavBar (pouvant servir pour tête ou bas de page - example : Home - Offre - A propos (Mentions légale, ))
@@ -41,7 +41,7 @@ Composants
 
 
 Pour Mardi :
-- Repo avec git flow
+- Repo avec git flow (pas impottant).
 - Validation des Composants
 - WYSIWYG
 - Upload d'Image + Connexion
