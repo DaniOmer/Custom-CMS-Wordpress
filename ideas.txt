@@ -22,7 +22,7 @@ Faire évoluer l'espace commentaire si on a le temps
 11- Composant contact (social media + adresse)
 12- Menu NavBar (pouvant servir pour tête ou bas de page - example : Home - Offre - A propos (Mentions légale, ))
 
-13 - Module de recherche - Newseletter - falcultatif si on a le temps
+13 - Module de recherche (important pour chercher la destination) + **CALANDRIER**  - Newseletter - falcultatif si on a le temps
 
 15- Composant HTML (form, button, )
 
@@ -35,7 +35,7 @@ Composants
 - Appel à l'action
 - page 
 - Bannière
-- Carroussel d'Image
+- Carroussel d'Image (peut-etre intégrer avec la Bannière ?)
 
 
 
@@ -45,5 +45,5 @@ Pour Mardi :
 - Validation des Composants
 - WYSIWYG
 - Upload d'Image + Connexion
-- Recherche projets similaires pour ressources
+- Recherche projets similaires pour ressources (https://www.promovacances.com/, https://www.promovacances.com/(trop d'informations sur celui-là), https://www.fr.lastminute.com/(trop de texte mais utile comme exemple), https://www.voyagespirates.fr/, https://www.tui.fr/bons-plans-voyage/ (Banner avant footer), https://www.expedia.fr/week-end
 - Modélisation de la base de données
