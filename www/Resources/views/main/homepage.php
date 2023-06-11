@@ -1,3 +1,3 @@
-<h2>Page d'accueil</h2>
-<h3>Bonjour <?= $pseudo ?> <?= $lastname ?></h3>
-
+<section>
+    <h1 class="text">Ceci est un test</h1>
+</section>

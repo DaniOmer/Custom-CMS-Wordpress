@@ -1,37 +1,31 @@
 <?php
+
 namespace App\Controllers;
+
 use App\Forms\Register;
+use Core\Router;
+use Core\Session;
 use Core\View;
+use JetBrains\PhpStorm\NoReturn;
 
 final class Security
 {
-    public function login()
+    public function register_form(): View
     {
-        $view = new View("security/login", "account");
+        return new View("security/register");
     }
 
-    public function register()
+    public function register(): void
     {
-        /*
-        $user = User::populate(4);
-        $user->setPwd("toto");
-        $user->save();
-        */
         $form = new Register();
-        if($form->isSubmited() && $form->isValid()){
-            //insertion en bdd
-            echo "OK";
+        $errors = $form->isValid();
+        if(!empty($errors)){
+            Session::set("errors",$errors);
+            Router::redirectTo("security.register");
         }
 
-
-
-        $view = new View("security/register", "account");
-        $view->assign('form', $form->getConfig());
-        $view->assign('formErrors', $form->listOfErrors);
+        Router::redirectTo("home");
     }
 
-    public function logout()
-    {
-        die("logout");
-    }
+
 }

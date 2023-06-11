@@ -2,12 +2,14 @@
 
 namespace App\Controllers;
 
+use Core\View;
+
 class HomeController
 {
 
     public function index()
     {
-        echo "Hello World";
+        return new View("main/homepage");
     }
 
 }

@@ -19,16 +19,21 @@ class Router
         return self::$instance;
     }
 
-    public static function url(string $name)
+    public static function url(string $name,string $method = "GET")
     {
         $router = self::getInstance();
-        $route = $router->getRouteByName($name);
+        $route = $router->getRouteByName($name,$method);
         if(is_null($route)){
             http_response_code(404);
             die("404 Not Found");
         } else{
             return $route->getUri();
         }
+    }
+
+    public static function assets(string $assetPath): string
+    {
+        return APP_URL."/assets/". $assetPath;
     }
 
     public static function redirectTo(string $name): void
@@ -88,6 +93,12 @@ class Router
             }
         }
         return null;
+    }
+
+    public function post(\Core\Route $route)
+    {
+        $route->setMethod("POST");
+        $this->routes[$route->getMethod()][] = $route;
     }
 
 }

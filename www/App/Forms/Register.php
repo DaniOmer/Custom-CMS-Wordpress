@@ -1,68 +1,36 @@
 <?php
+
 namespace App\Forms;
 
 use Core\Validator;
 
-class Register extends Validator {
+class Register extends Validator
+{
 
-    public $config = [];
 
-    public $method = "POST";
+    public string $method = "POST";
 
     public function __construct()
     {
         $this->config = [
-            "config"=>[
-                "method"=>$this->method,
-                "action"=>"",
-                "class"=>"form",
-                "id"=>"form-register",
-                "submit"=>"S'inscrire",
-                "cancel"=>"Annuler"
+            "config" => [
+                "method" => $this->method,
             ],
-            "inputs"=>[
-                "firstname"=>[
-                    "type"=>"text",
-                    "placeholder"=>"Votre prénom",
-                    "required"=>true,
-                    "id"=>"input-firstname",
-                    "class"=>"input-text",
-                    "min"=>2,
-                    "max"=>60,
-                    "error"=>"Votre prénom doit faire entre 2 et 60 caractères"
+            "inputs" => [
+                "firstname" => [
+                    "rules" => ["required", "min:2", "max:120"],
                 ],
-                "lastname"=>[
-                    "type"=>"text",
-                    "placeholder"=>"Votre nom",
-                    "required"=>true,
-                    "id"=>"input-lastname",
-                    "class"=>"input-text",
-                    "min"=>2,
-                    "max"=>120,
-                    "error"=>"Votre nom doit faire entre 2 et 120 caractères"
+                "lastname" => [
+                    "rules" => ["required", "min:2", "max:120"],
                 ],
-                "email"=>[
-                    "type"=>"email",
-                    "placeholder"=>"Votre email",
-                    "required"=>true,
-                    "id"=>"input-email",
-                    "class"=>"input-text",
-                    "error"=>"Votre email est incorrect"
+                "email" => [
+                    "rules" => ["required", "email"],
                 ],
-                "password"=>[
-                    "type"=>"password",
-                    "placeholder"=>"Votre mot de passe",
-                    "required"=>true,
-                    "id"=>"input-pwd",
-                    "class"=>"input-text"
+                "password" => [
+                    "rules" => ["required", "min:8", "max:120"],
                 ],
-                "password-confirm"=>[
-                    "type"=>"password",
-                    "placeholder"=>"Confirmation",
-                    "required"=>true,
-                    "id"=>"input-pwd-confirm",
-                    "class"=>"input-text",
-                    "confirm"=>"password"
+                "password_confirm" => [
+                    "rules" => ["required"]
                 ]
             ]
         ];

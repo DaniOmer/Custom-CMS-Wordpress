@@ -1,65 +1,41 @@
 <?php
 
 namespace Core;
-
 class Validator
 {
-    public $data;
-    public $listOfErrors = [];
+    public array $data;
+    protected array $config;
     public function __construct(){
         $this->data = ($this->method == "POST")? $_POST: $_GET;
     }
 
-    public function isValid(): bool
+    public function isValid(): array
     {
-         //$this->config et $this->data
-        if( count($this->config["inputs"])+1 != count($this->data) ){
-            die("Tentative de hack");
-        }
+        $listOfErrors = [];
 
-        foreach ($this->config["inputs"] as $name=>$attr)
-        {
-            if(!isset($this->data[$name])){
-                die("Tentative de hack");
+        foreach ($this->config["inputs"] as $name => $input) {
+            if (str_ends_with($name, "confirm")) {
+                $toConfirm = explode("_", $name)[1];
+                if ($this->data[$name] != $this->data[$toConfirm]) {
+                    $listOfErrors[] = $input["error"];
+                }
+            }
+            foreach ($input["rules"] as $rule) {
+                $args = explode(":", $rule);
+                $rule = array_shift($args);
+                if (method_exists(Rules::class, $rule)) {
+                    if (!Rules::$rule($this->data[$name], [
+                        "name" => $name,
+                        "args"=>$args
+                    ], $listOfErrors)) {
+                        break;
+                    }
+                } else {
+                    die("Tentative de Hack: Règle inconnue:$rule");
+                }
             }
 
-            if(!empty($attr["min"]) && !self::minLength($this->data[$name], $attr["min"])){
-                $this->listOfErrors[] = $attr["error"];
-            }
-
-            if(!empty($attr["max"]) && !self::maxLength($this->data[$name], $attr["max"])){
-                $this->listOfErrors[] = $attr["error"];
-            }
-
         }
-
-        return empty($this->listOfErrors);
+        return array_filter($listOfErrors);
     }
-
-
-    public static function minLength($value, $length): bool
-    {
-        return strlen(trim($value))>=$length;
-    }
-    public static function maxLength($value, $length): bool
-    {
-        return strlen(trim($value))<=$length;
-    }
-
-    public function isSubmited(): bool
-    {
-        if($_SERVER["REQUEST_METHOD"] == $this->method &&
-            !empty($this->data["submit"])){
-            return true;
-        }
-        return false;
-    }
-
-
-    public static function isValidEmail($email): bool
-    {
-
-    }
-
-
 }

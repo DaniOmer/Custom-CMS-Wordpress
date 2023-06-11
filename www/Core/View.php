@@ -6,17 +6,11 @@ class View{
     private string $template;
     private array $data = [];
 
-    public function __construct(String $view, String $template = "back")
+    public function __construct(String $view, String $template = "front")
     {
         $this->setView($view);
         $this->setTemplate($template);
     }
-
-    public function __toString(): string
-    {
-        return "Le template c'est ".$this->template." et la vue c'est ".$this->view;
-    }
-
     public function setView(String $view): void
     {
         if( !file_exists(ROOT."/Resources/views/".$view.".php")){
@@ -37,14 +31,6 @@ class View{
     public function assign($key, $value): void
     {
         $this->data[$key] = $value;
-    }
-
-    public function modal($name, $config, $errors): void
-    {
-        if(!file_exists("views/modals/".$name.".modal.php")){
-            die("Le modal ".$name." n'existe pas");
-        }
-        include "views/modals/".$name.".modal.php";
     }
 
     public function __destruct()
