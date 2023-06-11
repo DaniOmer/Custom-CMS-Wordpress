@@ -1,0 +1,20 @@
+{
+    "name": "esgi/custom-cms",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "symfony/var-dumper": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "./App",
+            "Core\\": "./Core",
+            "Resources\\": "./Resources"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "8.0"
+        }
+    }
+}

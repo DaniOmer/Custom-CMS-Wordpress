@@ -1,0 +1,16 @@
+{
+  "name": "www",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass public/assets/scss/main.scss:public/assets/css/main.css",
+    "watch": "sass --watch public/assets/scss/main.scss:public/assets/css/main.css"
+  },
+  "dependencies": {
+    "sass": "^1.63.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
