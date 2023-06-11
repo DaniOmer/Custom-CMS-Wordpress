@@ -1,3 +1,4 @@
 .idea
 www/vendor
 www/node_modules
+www/public/assets/css/**/*.css.map
